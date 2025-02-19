@@ -3,6 +3,9 @@ import logo from '../assets/logo.png'
 import mail from '../assets/mail.svg'
 
 export default function Navbar(){
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     return(
         <div className='relative bg-gradient-to-r from-white to-sky-500 px-15 min-h-20 w-screen flex items-center justify-between drop-shadow-lg'> 
             <div>
@@ -28,8 +31,28 @@ export default function Navbar(){
                 </a>
             </ul>
             <div className='md:hidden'>
-                <i className='bx bx-menu text-2xl'></i>
+                <button className="cursor-pointer"
+                        onClick={() => setIsMenuOpen((prev) => !isMenuOpen)}>
+                    <i className='bx bx-menu text-3xl'></i>
+                </button>
             </div>
+            <ul className={`font-semibold md:hidden absolute ${isMenuOpen ? "opacity-100" : "opacity-0"} flex flex-col transform transition-transform
+            left-0 top-40 items-center justify-center w-screen gap-1 bg-gradient-to-l from-blue-400 to-blue-50`}
+            style={{transition: "transform .3s ease, opacity .3s"}}>
+                <li className='active:bg-sky-500 text-center w-screen transition-all p-4'>
+                    <a href="#">Home</a>
+                </li>
+                <li className='active:bg-sky-500 text-center w-screen transition-all p-4'>
+                    <a href="#">Projects</a>
+                </li>
+                <li className='active:bg-sky-500 text-center w-screen transition-all p-4'>
+                    <a href="#">About</a>
+                </li>
+                <li className='active:bg-sky-500 text-center w-screen transition-all p-4'>
+                    <a href="#">Contact</a>
+                </li>
+
+            </ul>
         </div>
     )
 }
