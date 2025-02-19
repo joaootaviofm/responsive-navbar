@@ -1,29 +1,27 @@
+import { useState } from 'react'
 import logo from '../assets/logo.png'
 
 export default function Navbar(){
     return(
-        <div className="w-full h-full absolute bg-gradient-to-r from-blue-400 to-emerald-400">
-            <header className="bg-white flex justify-between items-center drop-shadow-md text-black
-            py-6 px-8 md:px-32">
-                <a href="#">
-                    <img className="w-52 hover:scale-115 transition-all"src={logo} alt="tailwind-logo" />
-                </a>
-                <ul className='hidden xl:flex items-center gap-12 text-base font-semibold'>
-                    <li className='hover:text-white cursor-pointer hover:bg-sky-400 p-3 rounded-md transition-all'>Home</li>
-                    <li className='hover:text-white cursor-pointer hover:bg-sky-400 p-3 rounded-md transition-all'>Products</li>
-                    <li className='hover:text-white cursor-pointer hover:bg-sky-400 p-3 rounded-md transition-all'>Explore</li>
-                    <li className='hover:text-white cursor-pointer hover:bg-sky-400 p-3 rounded-md transition-all'>Contact</li>
-                </ul>
-                <div className='hidden xl:flex items-center justify-center relative'>
-                    <i className='bx bx-search absolute left-3'></i>
-                    <input type="text" placeholder='Search...'
-                    className='transition-all focus:bg-slate-100 outline-sky-500 py-2 pl-10 border-2 border-sky-400 rounded-md'/>
-                </div>
-                
-                <div>
-                    <i className='bx bx-menu'></i> 
-                </div>
-            </header>
+        <div className='relative bg-gradient-to-r from-white to-sky-500 px-15 min-h-20 w-screen flex items-center justify-between drop-shadow-lg'> 
+            <div>
+                <img className='w-40 hover:scale-115 cursor-pointer transition-all' src={logo} alt="" />
+            </div>
+            <ul className='flex items-center gap-11'>
+                <li className='hover:bg-sky-500 transition-all font-bold hover:text-white p-3 rounded-lg cursor-pointer'>
+                    <a href="#">Home</a>
+                </li>
+                <li className='hover:bg-sky-500 transition-all font-bold hover:text-white p-3 rounded-lg cursor-pointer'>
+                    <a href="#">About</a>
+                </li>
+                <li className='hover:bg-sky-500 transition-all font-bold hover:text-white p-3 rounded-lg cursor-pointer'> 
+                    <a href="#">Projects</a>
+                </li>
+                <li className='hover:bg-sky-500 transition-all font-bold hover:text-white p-3 rounded-lg cursor-pointer'>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
         </div>
     )
 }
